@@ -1,4 +1,4 @@
-# CertiVerify Showcase
+# Certify Showcase
 
 A standalone landing page for the CertiVerify certificate-generation and verification web app.
 
