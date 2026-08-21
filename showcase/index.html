@@ -40,12 +40,16 @@
         How it works
       </a>
 
+      <a href="#showcase">
+        Showcase
+      </a>
+
       <a href="#technology">
         Technology
       </a>
 
       <a
-        href="http://localhost:5173"
+        href="https://certify-pink.vercel.app/"
         target="_blank"
         class="nav-button"
       >
@@ -88,7 +92,7 @@
         <div class="hero-actions">
 
           <a
-            href="http://localhost:5173"
+            href="https://certify-pink.vercel.app/"
             target="_blank"
             class="button button-primary"
           >
@@ -97,7 +101,7 @@
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/Harsh-v01/My"
             target="_blank"
             class="button button-secondary"
           >
@@ -471,6 +475,73 @@
     </section>
 
 
+
+    <!-- SHOWCASE -->
+    <section class="section showcase-section" id="showcase">
+
+      <div class="section-heading">
+        <p class="section-label">SHOWCASE</p>
+        <h2>See Certify in action.</h2>
+        <p>
+          A short walkthrough of the certificate generation workflow,
+          followed by a real public verification result.
+        </p>
+      </div>
+
+      <div class="showcase-grid">
+
+        <div class="showcase-card">
+          <div class="showcase-card-header">
+            <div>
+              <span class="showcase-kicker">01 · PRODUCT DEMO</span>
+              <h3>Certificate generation workflow</h3>
+            </div>
+            <span class="showcase-badge">LIVE DEMO</span>
+          </div>
+
+          <video
+            class="showcase-video"
+            controls
+            preload="metadata"
+            playsinline
+          >
+            <source src="certify-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p class="showcase-caption">
+            Upload participant data → generate personalized PDFs → download
+            certificates with unique QR verification.
+          </p>
+        </div>
+
+        <div class="showcase-card">
+          <div class="showcase-card-header">
+            <div>
+              <span class="showcase-kicker">02 · PUBLIC VERIFICATION</span>
+              <h3>What a verifier sees</h3>
+            </div>
+            <span class="showcase-badge">QR → WEB</span>
+          </div>
+
+          <div class="verification-image-wrap">
+            <img
+              src="verification%20photo.png"
+              alt="Certify public certificate verification result"
+              class="verification-image"
+            >
+          </div>
+
+          <p class="showcase-caption">
+            The QR code opens a public page showing the recipient, event,
+            certificate ID, issue date and current validity status.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- VERIFICATION -->
 
     <section class="verification-section">
@@ -491,13 +562,26 @@
           revoked, or doesn't exist.
         </p>
 
-        <a
-          href="http://localhost:5173/verify/demo"
-          target="_blank"
-          class="text-link"
-        >
-          Try verification demo →
-        </a>
+        <details class="dns-note">
+          <summary>QR opens a DNS error on some networks?</summary>
+          <div class="dns-note-content">
+            <p>
+              This is a network DNS issue, not a certificate-data issue.
+              The public verification service is hosted online and can be
+              checked directly from the public app URL.
+            </p>
+            <ol>
+              <li>On Windows, open <strong>Network settings → DNS settings</strong>.</li>
+              <li>Temporarily use <strong>1.1.1.1</strong> as Preferred DNS and <strong>8.8.8.8</strong> as Alternate DNS.</li>
+              <li>Run <code>ipconfig /flushdns</code> in PowerShell.</li>
+              <li>Refresh the verification page and scan the QR code again.</li>
+            </ol>
+            <p class="dns-note-foot">
+              This is only a troubleshooting step for networks whose DNS
+              resolver cannot resolve the public Railway domain.
+            </p>
+          </div>
+        </details>
 
       </div>
 
@@ -564,7 +648,7 @@
         <span>React</span>
         <span>Node.js</span>
         <span>Express</span>
-        <span>MongoDB</span>
+        <span>MySQL</span>
         <span>QR Codes</span>
         <span>PDF Generation</span>
         <span>Excel / CSV</span>
@@ -591,7 +675,7 @@
       </p>
 
       <a
-        href="http://localhost:5173"
+        href="https://certify-pink.vercel.app/"
         target="_blank"
         class="button button-primary"
       >
