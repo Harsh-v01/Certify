@@ -1,6 +1,8 @@
 import { db } from "../db.js";
 
 export async function createCertificate(data) {
+  console.log("INSERTING CERTIFICATE:", data.certificateId);
+
   await db.execute(
     `INSERT INTO certificates
       (certificate_id, recipient_name, email, event_name, issue_date, status, pdf_path)
@@ -16,7 +18,13 @@ export async function createCertificate(data) {
     ]
   );
 
-  return getCertificateById(data.certificateId);
+  console.log("INSERT SUCCESS:", data.certificateId);
+
+  const certificate = await getCertificateById(data.certificateId);
+
+  console.log("DB LOOKUP AFTER INSERT:", certificate);
+
+  return certificate;
 }
 
 export async function getCertificates(search = "") {
