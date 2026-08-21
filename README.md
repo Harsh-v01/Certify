@@ -1,146 +1,84 @@
 # Certify
 
-A simple full-stack web application for generating, managing, and verifying digital certificates.
+### Full Stack Certificate Generation & Verification Platform
+
+Certify is a full-stack web application that simplifies certificate creation and verification for workshops, events, training programs, and college organizations.
+
+It allows an administrator to upload participant data, generate personalized PDF certificates in bulk, and attach a unique QR code to every certificate. Anyone can scan the QR code to verify the certificate's authenticity and current status.
+
+## What I Built
+
+- Built a React-based certificate management dashboard
+- Developed REST APIs using Node.js and Express
+- Integrated MySQL for persistent certificate records
+- Implemented CSV/Excel participant data processing
+- Built automated PDF certificate generation
+- Added unique certificate IDs and QR-based verification
+- Implemented certificate search and management
+- Added certificate revocation with real-time verification status
+- Implemented individual PDF and bulk ZIP downloads
+- Designed a public certificate verification workflow
+
+## Key Workflow
+
+Participant CSV/Excel  
+→ Data Processing  
+→ Certificate ID Generation  
+→ PDF + QR Generation  
+→ MySQL Storage  
+→ Public QR Verification
 
 ## Tech Stack
 
-- React + Vite + CSS
-- Node.js + Express
-- MySQL + mysql2
-- PDFKit
-- QRCode
-- XLSX
-- Multer
-- Archiver
+**Frontend:** React, Vite, CSS  
+**Backend:** Node.js, Express.js  
+**Database:** MySQL  
+**Libraries:** PDFKit, QRCode, XLSX, Multer, Archiver
 
-## Features
+## Key Features
 
-- Upload CSV/Excel participant data
-- Preview participant records
-- Bulk certificate generation
-- Unique certificate IDs
-- PDF certificates with QR codes
-- MySQL certificate database
-- Public QR verification
-- Search certificates by name or ID
-- Revoke certificates
-- Download individual PDFs
-- Download all certificates as a ZIP
+### Bulk Certificate Generation
+Upload participant information through CSV or Excel and generate personalized certificates without creating them manually.
 
-## How It Works
+### QR-Based Verification
+Every certificate contains a unique QR code linked to its verification page.
 
-CSV / Excel  
-↓  
-React Frontend  
-↓  
-Express API  
-↓  
-Generate PDF + QR Code  
-↓  
-MySQL Database  
-↓  
-Public Verification
+### Certificate Management
+Search generated certificates by name or certificate ID, download certificates, and manage their status.
 
+### Certificate Revocation
+Certificates can be marked as `VALID` or `REVOKED`. The verification page reflects the current status.
 
-## Run Locally
+### Public Verification
+Anyone with a certificate can scan its QR code and verify:
 
-### Requirements
+- Recipient
+- Event
+- Issue Date
+- Certificate ID
+- Current Status
 
-- Node.js 18+
-- MySQL Server
+## Engineering Highlights
 
-### Install
+- RESTful API architecture
+- Relational database design using MySQL
+- File upload and spreadsheet parsing
+- Automated document generation
+- QR code generation and verification
+- Server-side validation and error handling
+- Separation of frontend, backend, database, and document-generation logic
 
-    npm install
-    npm run install-all
+## Project Structure
 
-### Environment
+```text
+Certify/
+├── client/          # React frontend
+├── server/          # Express backend
+├── sample-data/     # Sample CSV data
+├── showcase/        # Project showcase website
+└── package.json
+```
+## Why This Project?
 
-Create `server/.env` and add:
-
-    PORT=5000
-
-    DB_HOST=localhost
-    DB_PORT=3306
-    DB_USER=root
-    DB_PASSWORD=your_mysql_password
-    DB_NAME=certify
-
-    PUBLIC_BASE_URL=http://localhost:5173
-
-### MySQL Setup
-
-Create the database:
-
-    CREATE DATABASE certify;
-
-Then run the database schema located at:
-
-    server/database/schema.sql
-
-### Start the Application
-
-    npm run dev
-
-Frontend:
-
-    http://localhost:5173
-
-Backend:
-
-    http://localhost:5000
-
-## CSV Format
-
-Use these columns:
-
-    Name | Email | Event | Date
-
-Example:
-
-    Harsh Kumar | harsh@example.com | Python Workshop | 2026-08-20
-    Rahul Sharma | rahul@example.com | Python Workshop | 2026-08-20
-    Priya Shah | priya@example.com | Web Development | 2026-08-21
-
-A sample file is available in `sample-data/participants.csv`.
-
-## QR Verification
-
-Each certificate receives a unique ID such as:
-
-    CERT-2026-AB12X-001
-
-The QR code points to:
-
-    PUBLIC_BASE_URL/verify/CERTIFICATE_ID
-
-The verification page displays:
-
-- ✓ Certificate Valid
-- ⚠ Certificate Revoked
-- ✕ Certificate Not Found
-
-## Showcase
-
-The `showcase/` directory contains the public landing page for the Certify project.
-
-The showcase is deployed separately using GitHub Pages.
-
-## Project Philosophy
-
-Certify is intentionally kept simple and practical.
-
-The project does not use AI, blockchain, microservices, Redis, Docker, analytics, or unnecessary authentication.
-
-The goal is to demonstrate a practical Full Stack Development workflow involving:
-
-- React frontend
-- Express backend
-- MySQL database
-- CSV/Excel processing
-- PDF generation
-- QR-based certificate verification
-
-## Status
-
-In Development
+Certify was built as a practical Full Stack Development project to solve a common problem faced by colleges, workshops, clubs, and training programs: generating large numbers of certificates while providing a simple way to verify them.
+The project focuses on implementing a complete end-to-end workflow rather than adding unnecessary technologies or features.
