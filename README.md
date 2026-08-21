@@ -41,21 +41,6 @@ MySQL Database
 ↓  
 Public Verification
 
-## Project Structure
-
-Certify/
-├── client/
-├── server/
-│   ├── src/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── server.js
-│   ├── database/
-│   └── generated/
-├── showcase/
-├── sample-data/
-└── package.json
 
 ## Run Locally
 
