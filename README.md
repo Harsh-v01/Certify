@@ -18,7 +18,14 @@ It allows an administrator to upload participant data, generate personalized PDF
 - Added certificate revocation with real-time verification status
 - Implemented individual PDF and bulk ZIP downloads
 - Designed a public certificate verification workflow
+## 👨‍💻 Project Highlights
 
+This project demonstrates practical experience with **full-stack development, REST APIs, relational databases, PDF generation, QR-code integration, and cloud deployment**.
+
+## Why This Project?
+
+Certify was built as a practical Full Stack Development project to solve a common problem faced by colleges, workshops, clubs, and training programs: generating large numbers of certificates while providing a simple way to verify them.
+The project focuses on implementing a complete end-to-end workflow rather than adding unnecessary technologies or features.
 ## Key Workflow
 
 Participant CSV/Excel  
@@ -68,17 +75,15 @@ Anyone with a certificate can scan its QR code and verify:
 - Server-side validation and error handling
 - Separation of frontend, backend, database, and document-generation logic
 
-## Project Structure
+## 🔗 Important Deployment Details
 
-```text
-Certify/
-├── client/          # React frontend
-├── server/          # Express backend
-├── sample-data/     # Sample CSV data
-├── showcase/        # Project showcase website
-└── package.json
-```
-## Why This Project?
+| Component | Hosted On |
+|---|---|
+| Frontend | Vercel |
+| Backend API | Railway |
+| Database | Aiven (for sql database hosting)|
+| Project Showcase | GitHub Pages |
 
-Certify was built as a practical Full Stack Development project to solve a common problem faced by colleges, workshops, clubs, and training programs: generating large numbers of certificates while providing a simple way to verify them.
-The project focuses on implementing a complete end-to-end workflow rather than adding unnecessary technologies or features.
+The QR code uses the public Vercel verification URL, while certificate verification is handled by the Railway backend and MySQL database.
+
+
