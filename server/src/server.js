@@ -34,8 +34,8 @@ async function startServer() {
     await db.query("SELECT 1");
     console.log("MySQL connected successfully.");
 
-    app.listen(PORT, () => {
-      console.log(`Certify API running on http://localhost:${PORT}`);
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Certify API running on port ${PORT}`);
     });
   } catch (error) {
     console.error("MySQL connection failed:", error.message);
