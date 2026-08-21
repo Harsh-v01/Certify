@@ -1,130 +1,84 @@
-<<<<<<< HEAD
 # Certify
-=======
-# Certify Showcase
->>>>>>> origin/main
 
-A simple full-stack certificate generation and verification web app.
+### Full Stack Certificate Generation & Verification Platform
 
-## Stack
+Certify is a full-stack web application that simplifies certificate creation and verification for workshops, events, training programs, and college organizations.
 
-- React + Vite + CSS
-- Node.js + Express
-- MySQL + mysql2
-- PDFKit for PDF certificates
-- qrcode for QR codes
-- xlsx for Excel/CSV imports
+It allows an administrator to upload participant data, generate personalized PDF certificates in bulk, and attach a unique QR code to every certificate. Anyone can scan the QR code to verify the certificate's authenticity and current status.
 
-## Features
+## What I Built
 
-- Upload Excel/CSV participant data
-- Preview participant records
-- Bulk certificate generation
-- Unique certificate IDs
-- PDF certificates with QR codes
-- MySQL certificate records
-- Public QR verification
-- Search certificates
-- Revoke certificates
-- Download individual PDFs
-- Download a ZIP of generated PDFs
+- Built a React-based certificate management dashboard
+- Developed REST APIs using Node.js and Express
+- Integrated MySQL for persistent certificate records
+- Implemented CSV/Excel participant data processing
+- Built automated PDF certificate generation
+- Added unique certificate IDs and QR-based verification
+- Implemented certificate search and management
+- Added certificate revocation with real-time verification status
+- Implemented individual PDF and bulk ZIP downloads
+- Designed a public certificate verification workflow
 
-## Run locally
+## Key Workflow
 
-Requirements:
-- Node.js 18+
-- MySQL running locally or a MySQL connection string
+Participant CSV/Excel  
+→ Data Processing  
+→ Certificate ID Generation  
+→ PDF + QR Generation  
+→ MySQL Storage  
+→ Public QR Verification
 
-Install:
+## Tech Stack
 
-```bash
-npm install
-npm run install-all
-```
+**Frontend:** React, Vite, CSS  
+**Backend:** Node.js, Express.js  
+**Database:** MySQL  
+**Libraries:** PDFKit, QRCode, XLSX, Multer, Archiver
 
-Copy environment files:
+## Key Features
 
-```bash
-copy server\.env.example server\.env
-```
+### Bulk Certificate Generation
+Upload participant information through CSV or Excel and generate personalized certificates without creating them manually.
 
-Linux/macOS:
+### QR-Based Verification
+Every certificate contains a unique QR code linked to its verification page.
 
-```bash
-cp server/.env.example server/.env
-```
+### Certificate Management
+Search generated certificates by name or certificate ID, download certificates, and manage their status.
 
-Start:
+### Certificate Revocation
+Certificates can be marked as `VALID` or `REVOKED`. The verification page reflects the current status.
 
-```bash
-npm run dev
-```
+### Public Verification
+Anyone with a certificate can scan its QR code and verify:
 
-Frontend:
-http://localhost:5173
+- Recipient
+- Event
+- Issue Date
+- Certificate ID
+- Current Status
 
-Backend:
-http://localhost:5000
+## Engineering Highlights
 
-## MySQL
+- RESTful API architecture
+- Relational database design using MySQL
+- File upload and spreadsheet parsing
+- Automated document generation
+- QR code generation and verification
+- Server-side validation and error handling
+- Separation of frontend, backend, database, and document-generation logic
 
-Default local database:
-
-`mongodb://127.0.0.1:27017/certify`
-
-Change `MONGODB_URI` in `server/.env` if needed.
-
-## Excel format
-
-Use these columns:
-
-```text
-Name | Email | Event | Date
-Harsh Kumar | harsh@example.com | Python Workshop | 2026-08-20
-```
-
-A sample file is included in `sample-data/participants.csv`.
-
-## QR verification
-
-The QR code points to:
-
-`PUBLIC_BASE_URL/verify/CERTIFICATE_ID`
-
-For local development, the default is:
-
-`http://localhost:5173`
-<<<<<<< HEAD
-
-For deployment, change `PUBLIC_BASE_URL` to the deployed frontend URL.
-
-## Project structure
+## Project Structure
 
 ```text
 Certify/
-├── client/
-│   ├── src/
-│   └── package.json
-├── server/
-│   ├── src/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── server.js
-│   └── package.json
-└── sample-data/
+├── client/          # React frontend
+├── server/          # Express backend
+├── sample-data/     # Sample CSV data
+├── showcase/        # Project showcase website
+└── package.json
 ```
+## Why This Project?
 
-This version intentionally avoids authentication, AI, microservices, analytics, Redis, Docker and other unnecessary complexity.
-
-
-## MySQL setup
-
-1. Install MySQL Server locally.
-2. Start the MySQL service.
-3. Create the database/tables by running `server/database/schema.sql`.
-4. Copy `server/.env.example` to `server/.env` and set your MySQL password.
-5. Install dependencies with `npm install` in the root/server as required.
-=======
-In building stage
->>>>>>> origin/main
+Certify was built as a practical Full Stack Development project to solve a common problem faced by colleges, workshops, clubs, and training programs: generating large numbers of certificates while providing a simple way to verify them.
+The project focuses on implementing a complete end-to-end workflow rather than adding unnecessary technologies or features.
