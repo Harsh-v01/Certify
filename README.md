@@ -1,130 +1,161 @@
-<<<<<<< HEAD
 # Certify
-=======
-# Certify Showcase
->>>>>>> origin/main
 
-A simple full-stack certificate generation and verification web app.
+A simple full-stack web application for generating, managing, and verifying digital certificates.
 
-## Stack
+## Tech Stack
 
 - React + Vite + CSS
 - Node.js + Express
 - MySQL + mysql2
-- PDFKit for PDF certificates
-- qrcode for QR codes
-- xlsx for Excel/CSV imports
+- PDFKit
+- QRCode
+- XLSX
+- Multer
+- Archiver
 
 ## Features
 
-- Upload Excel/CSV participant data
+- Upload CSV/Excel participant data
 - Preview participant records
 - Bulk certificate generation
 - Unique certificate IDs
 - PDF certificates with QR codes
-- MySQL certificate records
+- MySQL certificate database
 - Public QR verification
-- Search certificates
+- Search certificates by name or ID
 - Revoke certificates
 - Download individual PDFs
-- Download a ZIP of generated PDFs
+- Download all certificates as a ZIP
 
-## Run locally
+## How It Works
 
-Requirements:
-- Node.js 18+
-- MySQL running locally or a MySQL connection string
+CSV / Excel  
+↓  
+React Frontend  
+↓  
+Express API  
+↓  
+Generate PDF + QR Code  
+↓  
+MySQL Database  
+↓  
+Public Verification
 
-Install:
+## Project Structure
 
-```bash
-npm install
-npm run install-all
-```
-
-Copy environment files:
-
-```bash
-copy server\.env.example server\.env
-```
-
-Linux/macOS:
-
-```bash
-cp server/.env.example server/.env
-```
-
-Start:
-
-```bash
-npm run dev
-```
-
-Frontend:
-http://localhost:5173
-
-Backend:
-http://localhost:5000
-
-## MySQL
-
-Default local database:
-
-`mongodb://127.0.0.1:27017/certify`
-
-Change `MONGODB_URI` in `server/.env` if needed.
-
-## Excel format
-
-Use these columns:
-
-```text
-Name | Email | Event | Date
-Harsh Kumar | harsh@example.com | Python Workshop | 2026-08-20
-```
-
-A sample file is included in `sample-data/participants.csv`.
-
-## QR verification
-
-The QR code points to:
-
-`PUBLIC_BASE_URL/verify/CERTIFICATE_ID`
-
-For local development, the default is:
-
-`http://localhost:5173`
-<<<<<<< HEAD
-
-For deployment, change `PUBLIC_BASE_URL` to the deployed frontend URL.
-
-## Project structure
-
-```text
 Certify/
 ├── client/
-│   ├── src/
-│   └── package.json
 ├── server/
 │   ├── src/
 │   │   ├── models/
 │   │   ├── routes/
 │   │   ├── services/
 │   │   └── server.js
-│   └── package.json
-└── sample-data/
-```
+│   ├── database/
+│   └── generated/
+├── showcase/
+├── sample-data/
+└── package.json
 
-This version intentionally avoids authentication, AI, microservices, analytics, Redis, Docker and other unnecessary complexity.
+## Run Locally
 
+### Requirements
 
-## MySQL setup
+- Node.js 18+
+- MySQL Server
 
-1. Install MySQL Server locally.
-2. Start the MySQL service.
-3. Create the database/tables by running `server/database/schema.sql`.
-4. Copy `server/.env.example` to `server/.env` and set your MySQL password.
-5. Install dependencies with `npm install` in the root/server as required.
-=======
-In building stage
->>>>>>> origin/main
+### Install
+
+    npm install
+    npm run install-all
+
+### Environment
+
+Create `server/.env` and add:
+
+    PORT=5000
+
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_USER=root
+    DB_PASSWORD=your_mysql_password
+    DB_NAME=certify
+
+    PUBLIC_BASE_URL=http://localhost:5173
+
+### MySQL Setup
+
+Create the database:
+
+    CREATE DATABASE certify;
+
+Then run the database schema located at:
+
+    server/database/schema.sql
+
+### Start the Application
+
+    npm run dev
+
+Frontend:
+
+    http://localhost:5173
+
+Backend:
+
+    http://localhost:5000
+
+## CSV Format
+
+Use these columns:
+
+    Name | Email | Event | Date
+
+Example:
+
+    Harsh Kumar | harsh@example.com | Python Workshop | 2026-08-20
+    Rahul Sharma | rahul@example.com | Python Workshop | 2026-08-20
+    Priya Shah | priya@example.com | Web Development | 2026-08-21
+
+A sample file is available in `sample-data/participants.csv`.
+
+## QR Verification
+
+Each certificate receives a unique ID such as:
+
+    CERT-2026-AB12X-001
+
+The QR code points to:
+
+    PUBLIC_BASE_URL/verify/CERTIFICATE_ID
+
+The verification page displays:
+
+- ✓ Certificate Valid
+- ⚠ Certificate Revoked
+- ✕ Certificate Not Found
+
+## Showcase
+
+The `showcase/` directory contains the public landing page for the Certify project.
+
+The showcase is deployed separately using GitHub Pages.
+
+## Project Philosophy
+
+Certify is intentionally kept simple and practical.
+
+The project does not use AI, blockchain, microservices, Redis, Docker, analytics, or unnecessary authentication.
+
+The goal is to demonstrate a practical Full Stack Development workflow involving:
+
+- React frontend
+- Express backend
+- MySQL database
+- CSV/Excel processing
+- PDF generation
+- QR-based certificate verification
+
+## Status
+
+In Development
