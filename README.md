@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Certify
+=======
+# Certify Showcase
+>>>>>>> origin/main
 
 A simple full-stack certificate generation and verification web app.
 
@@ -90,6 +94,7 @@ The QR code points to:
 For local development, the default is:
 
 `http://localhost:5173`
+<<<<<<< HEAD
 
 For deployment, change `PUBLIC_BASE_URL` to the deployed frontend URL.
 
@@ -120,3 +125,6 @@ This version intentionally avoids authentication, AI, microservices, analytics, 
 3. Create the database/tables by running `server/database/schema.sql`.
 4. Copy `server/.env.example` to `server/.env` and set your MySQL password.
 5. Install dependencies with `npm install` in the root/server as required.
+=======
+In building stage
+>>>>>>> origin/main
