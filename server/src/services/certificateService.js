@@ -21,6 +21,8 @@ export async function createCertificatePdf({
   const verificationUrl =
     `${process.env.PUBLIC_BASE_URL || "http://localhost:5173"}/verify/${certificateId}`;
 
+  console.log("QR verification URL:", verificationUrl);
+
   const qrDataUrl = await QRCode.toDataURL(verificationUrl, {
     width: 180,
     margin: 1,
